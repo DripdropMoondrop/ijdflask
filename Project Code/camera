@@ -13,6 +13,6 @@ public class camera : MonoBehaviour
     {
         horizontal += Input.GetAxis("Mouse X") * sensitivity;
         verticle += Input.GetAxis("Mouse Y") * -1 * sensitivity;
-        transform.localEulerAngles = new Vector3(horizontal, verticle, 0);
+        transform.localEulerAngles = new Vector3(verticle, horizontal, 0);
     }
 }
