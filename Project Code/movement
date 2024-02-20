@@ -6,15 +6,16 @@ public class movement : MonoBehaviour
 {
     public float horizontalInput;
     public float verticalInput;
-    public float turnSpeed;
+    public float turnSpeed = 2;
+    public float speed = 5;
 
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.forward * Time.deltaTime * horizontalInput);
-        transform.Translate(-Vector3.right * Time.deltaTime * verticalInput);
+        transform.Translate(Vector3.forward * Time.deltaTime * horizontalInput * speed);
+        transform.Translate(-Vector3.right * Time.deltaTime * verticalInput * speed);
         transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime);
     }
 }
